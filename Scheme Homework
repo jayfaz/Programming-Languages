@@ -1,0 +1,13 @@
+; create the list containing the 4 fractions and the test that is better
+(define (calc_prob Patient_Data)
+	(list (get_frac(car Patient_Data)) (get_frac(cadr Patient_Data)) (get_frac(caddr Patient_Data)) (get_frac(cadddr Patient_Data)) (better_test(Patient_Data))) 
+
+; return the first number divided by the second number of the list
+(define (get_frac Patient_Data)
+   (/ (car Patient_Data cadr Patient_Data))
+
+; return which test was more accurate, test1, test2, or neither
+(define (better_test Patient_Data)
+	(cond (( && ( > (get_frac(car Patient_Data)) (get_frac(cadr Patient_Data)))( > ((get_frac(caddr Patient_Data)) ((get_frac(cadddr Patient_Data)))))))'Test1)
+		(( and ( > (get_frac(car Patient_Data)) (get_frac(cadr Patient_Data)))( < ((get_frac(caddr Patient_Data)) ((get_frac(cadddr Patient_Data))))))'Test2)
+		(else 'Neither))
